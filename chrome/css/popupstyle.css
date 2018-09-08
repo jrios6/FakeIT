@@ -2,13 +2,13 @@ body {
     font-family: 'Open Sans';
 }
 
-.header-container {
+/* .header-container {
     background-color: #52A0F3;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     height: 30px;
     position: relative;
-}
+} */
 
 .header {
     font-size: 18px;
@@ -20,6 +20,16 @@ body {
     margin-left: auto;
     margin-right: auto;
     width: 100%;
+    position: relative;
+    width: 100%;
+}
+
+.header img {
+    top: 0;
+    width: 20%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
 }
 
 .content-container {
@@ -32,6 +42,11 @@ body {
     margin-right: 10px;
     margin-bottom: 5px;
     font-size: 12px;
+}
+
+#status {
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .open-dashboard {

@@ -30,7 +30,6 @@ function updateTime(prev) {
 
 
 function updateScores() {
-  console.log('Updating');
   chrome.storage.sync.get(['score', 'time', 'points'], function(results){
     $('#score').text(results.score);
     $('#points').text(results.points);
@@ -132,6 +131,21 @@ function onWindowLoad() {
       message.innerText = 'There was an error injecting script : \n' + chrome.runtime.lastError.message;
     }
     console.log("hello");
+  });
+
+  // Get the input field
+  var input = document.getElementById("headline");
+
+  // Execute a function when the user releases a key on the keyboard
+  input.addEventListener("keyup", function(event) {
+      console.log("entered keyup event listener");
+    // Cancel the default action, if needed
+    event.preventDefault();
+    // Number 13 is the "Enter" key on the keyboard
+    if (event.keyCode === 13) {
+      // Trigger the button element with a click
+      document.getElementById("checkHeadline").click();
+    }
   });
 
 }
