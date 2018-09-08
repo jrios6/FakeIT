@@ -46,7 +46,7 @@ $(document).ready(function () {
       if (response.remainingAttempts == 0) {
         $('#status').text('You ran out of attempts! Here are the fake articles.');
         hideStatus();
-      } else if (submission == response.posts[0].siteUrl) {
+      } else if (submission.toLowerCase() == response.posts[0].title.toLowerCase()) {
         if (response.posts[0].done) {
           $('#status').text('You have already entered this!');
           hideStatus();
