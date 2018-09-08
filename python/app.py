@@ -45,7 +45,7 @@ class GetRandomArticle(Resource):
                 'news_icon_str': news_icon_str}
         return data
 
-class SendEmail():
+class SendEmail(Resource):
     def get(self):
         et.send_email()
 
