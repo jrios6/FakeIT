@@ -59,6 +59,13 @@ $(document).ready(function () {
             level += 1
             $('#status').text(`Congrats for getting all 5 right! You are now a ${levelNames[level]}🎉`);
             $('#video').html('<video controls autoplay width-"400px"><source src="gm.mp4" type="video/mp4"></video>');
+            $.ajax({
+              type: "GET",
+              url: 'http://localhost:5000/sendemail',
+              success: function(result) {
+                console.log('Email Sent');
+              },
+            });
           } else {
             $('#status').text('Correct! You earned 50 points :)');
           }

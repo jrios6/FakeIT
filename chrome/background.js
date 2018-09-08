@@ -1,22 +1,4 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
-// Use of this source code is governed by a BSD-style license that can be
-// found in the LICENSE file.
-
 'use strict';
-
-// chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
-//     if (request.method == "getLocalStorage") {
-//       return new Promise((resolve, reject) => {
-//         chrome.storage.sync.get(request.key, function(posts){
-//           sendResponse({data: posts})
-//           resolve("success");
-//         });
-//       );
-//     } else {
-//       sendResponse({});
-//     }
-//
-// });
 
 chrome.runtime.onInstalled.addListener(function() {
   chrome.storage.sync.get(['score', 'time', 'points'], function(results){
@@ -37,6 +19,7 @@ chrome.runtime.onInstalled.addListener(function() {
     data: JSON.stringify({ "category": "bs"}),
     contentType: "application/json ; charset=utf-8",
     success: function(result) {
+      console.log(result);
       chrome.storage.sync.set({ posts: [result], time: Date.now(), score: 4, remainingAttempts: 5, level: 3 });
     },
     dataType: 'json'
