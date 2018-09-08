@@ -45,8 +45,14 @@ body {
 }
 
 #status {
-    margin-left: 10px;
-    margin-right: 10px;
+  margin-top: 6px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+video {
+  margin-top: 8px;
+  width: 220px;
 }
 
 .open-dashboard {

@@ -23,10 +23,12 @@ chrome.runtime.onInstalled.addListener(function() {
     var score = 0;
     var time = 0;
     var points = 0;
+    var level = 0;
     if (results.score) score += results.score;
     if (results.time) time += results.time;
     if (results.points) points += results.points;
-    chrome.storage.sync.set({ score, time, points });
+    if (results.level) level += results.level;
+    chrome.storage.sync.set({ score, time, points, level });
   });
 
   $.ajax({
@@ -35,7 +37,7 @@ chrome.runtime.onInstalled.addListener(function() {
     data: JSON.stringify({ "category": "bs"}),
     contentType: "application/json ; charset=utf-8",
     success: function(result) {
-      chrome.storage.sync.set({ posts: [result], time: Date.now()});
+      chrome.storage.sync.set({ posts: [result], time: Date.now(), score: 4, remainingAttempts: 5, level: 3 });
     },
     dataType: 'json'
   });
@@ -57,9 +59,3 @@ chrome.runtime.onInstalled.addListener(function() {
     }]);
   });
 });
-
-
-// Update badge with value from chrome storage
-// chrome.storage.onChanged.addListener(function(changes, storageName){
-//   chrome.browserAction.setBadgeText({"text": changes.total.newValue.toString()});
-// });
