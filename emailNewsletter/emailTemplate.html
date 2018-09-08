@@ -21,21 +21,6 @@
         width: 100%;
         padding: 15px;
     }
-    .email-header-image {
-        width: 50%;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    .email-header-logo {
-        /* margin-left: 10px;
-        margin-top: 10px; */
-        margin-top: 0.5vw;
-        margin-bottom: 0.5vw;
-        margin-left: 0.5vw;
-        float: left;
-        max-width: 100px;
-        height: auto;
-    }
     .email-header-text {
         margin-right: 40px;
         text-align: right;
@@ -44,12 +29,19 @@
         color: #4684C4;
     }
     .email-header-bar {
-        width: 100%; height: 40px;
-        background-color: #2BBAFC;
+        width: 100%; height: 100px;
+        background-color: #00497F;
+        position: relative;
+    }
+    .email-header-bar-text {
+        width: 100%;
+        position: absolute;
+        bottom: 0;
         font-size: 30px;
         font-weight: 600;
-        color: #F5F5F5;
-        text-align: center;
+        color: white;
+        margin-left: auto;
+        margin-right: auto;
     }
     .email-message {
         width: 100%;
@@ -183,11 +175,10 @@
 <body>
     <div class="email-background">
         <div class="email-container">
-            <div class="email-header-container">
-                <br>
-            </div>
             <div class="email-header-bar">
-                FAKE IT TO WIN IT
+                <div class="email-header-bar-text">
+                    FAKE IT TO WIN IT
+                </div>
             </div>
 
             <!-- intro message -->
