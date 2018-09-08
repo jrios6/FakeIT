@@ -16,7 +16,7 @@ class Test(Resource):
 class GetRandomArticle(Resource):
     def put(self):
         # Get requested category or None
-        if request.json == None:
+        if request.json == None or 'category' not in request.json:
             category = None
         else:
             category = request.json['category']
