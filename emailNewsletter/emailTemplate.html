@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>Email Test</title>
+    <style>
+    .email-background {
+        background: #eee;
+        padding: 10px;
+    }
+    .email-container {
+        max-width: 600px;
+        background: #fff;
+        font-family: sans-serif;
+        margin: 0 auto;
+        overflow: hidden;
+        border-radius: 5px;
+        text-align: center;
+    }
+    .email-header-container {
+        width: 100%;
+        padding: 15px;
+    }
+    .email-header-image {
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .email-header-logo {
+        /* margin-left: 10px;
+        margin-top: 10px; */
+        margin-top: 0.5vw;
+        margin-bottom: 0.5vw;
+        margin-left: 0.5vw;
+        float: left;
+        max-width: 100px;
+        height: auto;
+    }
+    .email-header-text {
+        margin-right: 40px;
+        text-align: right;
+        font-size: 9px;
+        letter-spacing: -1px;
+        color: #4684C4;
+    }
+    .email-header-bar {
+        width: 100%; height: 40px;
+        background-color: #2BBAFC;
+        font-size: 30px;
+        font-weight: 600;
+        color: #F5F5F5;
+        text-align: center;
+    }
+    .email-message {
+        width: 100%;
+    }
+    .email-score-container {
+        float: left;
+        width: 200px;
+        height: 300px;
+        background-color: grey;
+        line-height: 300px;
+        text-align: center;
+    }
+    .email-level-container p {
+        font-size: 20px;
+        color: #8C8C8C;
+        margin: 0px 20px 0px 20px;
+    }
+    .level-bar {
+        height: 20px;
+        width: 90%;
+        margin: auto;
+    	position: relative;
+    	background: #70CBF5/*$level_bar_color*/;
+    	border-radius: 25px;
+    	padding: 10px;
+    }
+    .level-bar > span {
+        display: block;
+        height: 100%;
+        border-top-right-radius: 8px;
+        border-bottom-right-radius: 8px;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+        background-color: #147EAF/*$level_bar_fillcolor*/;
+        position: relative;
+        overflow: hidden;
+        float: left;
+    }
+    .leaderboard-header {
+        font-size: 18px;
+        text-align: center;
+        letter-spacing: -1px;
+    }
+
+    #leaderboard-container {
+        margin: auto;
+        width: 80%;
+        height: auto;
+        border-width: 2px;
+        border-style: solid;
+        border-radius: 20px;
+        position: relative;
+        overflow: hidden;
+    }
+    .leaderboard-row {
+    	position: relative;
+    	display: block;
+    	width: 100%;
+    	height: 40px;
+    	border-bottom: 1px solid #AFAFAF;
+    }
+    .leaderboard-position {
+        position: relative;
+    	display: inline-block;
+    	width: 30%;
+    	line-height: 45px;
+        font-size:13px;
+        letter-spacing: -1px;
+    }
+    .leaderboard-name {
+    	position: relative;
+    	display: inline-block;
+    	width: 30%;
+    	line-height: 45px;
+        font-size:13px;
+        letter-spacing: -1px;
+    }
+    .leaderboard-score {
+    	position: relative;
+    	display: inline-block;
+    	width: 30%;
+        font-size:13px;
+        letter-spacing: -1px;
+    }
+    .email-footer-title {
+        font-size: 16px;
+        text-align: center;
+    }
+    .score-block {
+        height: 100%;
+        line-height: 50px;
+        width: 100%;
+        text-align: center;
+        font-size: 20px;
+        letter-spacing: -1px;
+    }
+    .score-block-title {
+        height: 30px;
+        line-height: 30px;
+        width: 100%;
+        text-align: center;
+        font-size: 15px;
+        letter-spacing: -1px;
+    }
+    .exp-status-notification {
+        width: 80%;
+        text-align: center;
+        font-size: 15px;
+        margin: 0 auto;
+        font-size: 15px;
+        font-weight: 300;
+    }
+    img {
+        max-width: 100%;
+    }
+    p {
+        margin: 30px;
+        font-size: 15px;
+        font-weight: 300;
+        line-height: 1.5;
+        text-align: left;
+    }
+    .footer {
+        background: none;
+        padding: 20px;
+        font-size: 10px;
+        text-align: center;
+    }
+    </style>
+</head>
+<body>
+    <div class="email-background">
+        <div class="email-container">
+            <div class="email-header-container">
+                <br>
+            </div>
+            <div class="email-header-bar">
+                FAKE IT TO WIN IT
+            </div>
+
+            <!-- intro message -->
+            <p>
+                Hi $username,</br></br>
+                $intro_message // Congratulations! Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</i>
+            </p>
+
+            <!-- level up bar -->
+            <div class="email-level-container">
+                <p style="text-align:left;letter-spacing: -1px;"><b>level 3$level_num</b></p>
+                <div class="level-bar">
+                    <span style="width: 30%/*$level_bar_percent%*/"></span>
+                </div>
+                <p style="text-align:right;">30/500 $level_exp/$level_total_exp EXP</p>
+            </div>
+
+            <!-- exp status notification -->
+            <div class="exp-status-notification">
+                $exp_status_notification
+            </div>
+        </br></br>
+
+            <!-- leaderboard header -->
+            <div class="leaderboard-header">
+                <b>FAKE LEADERBOARD</b>
+            </div>
+
+            <!-- leaderboard container -->
+            <div id="leaderboard-container">
+                <div class="leaderboard-row" style="background-color: #0B82A2;">
+                    <div class="leaderboard-position"><b>POSITION</b></div><div class="leaderboard-name"><b>USER</b></div><div class="leaderboard-score"><b> CURRENT SCORE</b></div>
+                </div>
+                <div class="leaderboard-row">
+                    <div class="leaderboard-position">1.</div><div class="leaderboard-name">$first_pos_name</div><div class="leaderboard-score">$first_pos_score</div>
+                </div>
+                <div class="leaderboard-row">
+                    <div class="leaderboard-position">2.</div><div class="leaderboard-name">$second_pos_name</div><div class="leaderboard-score">$second_pos_score</div>
+                </div>
+                <div class="leaderboard-row">
+                    <div class="leaderboard-position">3.</div><div class="leaderboard-name">$third_pos_name</div><div class="leaderboard-score">$third_pos_score</div>
+                </div>
+                <div class="leaderboard-row" style="background-color: #AEE7F6">
+                    <div class="leaderboard-position">#$username_pos</div><div class="leaderboard-name">$username</div><div class="leaderboard-score">$username_score</div>
+                </div>
+            </div>
+            </br></br>
+            <div class="email-header-image">
+                <img src="https://cdn-images-1.medium.com/max/1600/1*39cDapmp09027HMm9Xn73w.png" alt="">
+            </div>
+            <br>
+            <div class="email-footer-title">
+                <b>You have passed the level: </b> IMPERSONATION
+            </div>
+            <p>
+                It’s very easy to start a website and publish content that looks entirely legitimate. Since there’s almost no entry barrier in terms of costs,
+pretty much anyone can do it. The purpose of this badge is to show how easy this process is
+and how a professional look or strong-sounding name does not necessarily imply legitimacy. In
+the game, ‘impersonation’ refers to two things:
+- Impersonating a real person or organization
+by mimicking their appearance, for example
+by using a slightly different username.
+- Posing as a legitimate news website or blog
+without the usual journalistic credentials and
+guidelines.
+Players first post a tweet about something that frustrates them, which can be anything from a
+failing government to the Flat Earth Society. This gets them their first followers, and the game explains how the follower counter and credibility meter function. Players then impersonate the
+official account of either Donald Trump (who declares war on North Korea), the US Geological
+Survey Earthquake Alerts (which warns of a magnitude 9.3 earthquake near London, United Kingdom), or Nickelodeon (which announces the impending cancellation of SpongeBob SquarePants). Players are then shown two reaction tweets by Twitter users who fell for the impersonation hoax. The game then prompts them to go professional and start their own news site. They pick a website name, title and
+slogan.
+            </p>
+            </br></br></br>
+        </div>
+        <div class="footer">
+            FAKE.IT
+        </div>
+
+    </div>
+</body>
+</html>
