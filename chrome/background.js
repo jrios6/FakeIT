@@ -35,7 +35,7 @@ chrome.runtime.onInstalled.addListener(function() {
     data: JSON.stringify({ "category": "bs"}),
     contentType: "application/json ; charset=utf-8",
     success: function(result) {
-      chrome.storage.sync.set({ posts: [result]});
+      chrome.storage.sync.set({ posts: [result], time: Date.now()});
     },
     dataType: 'json'
   });

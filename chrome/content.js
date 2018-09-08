@@ -5,9 +5,6 @@ var ele = document.querySelectorAll('[role="feed"]');
 // var postTime = 'Yesterday at 4:00 PM';
 var userName = 'Leow Yang Yang';
 var iconURL = 'http://www.abc.net.au/news/image/9343482-3x2-700x467.jpg';
-/*var postMessage = 'Experience our latest cabin products and newest inflight entertainment system on the new <a class="_58cn" href="/hashtag/singaporeaira350?source=feed_text&amp;__xts__%5B0%5D=68.ARBvXhWRonbF6lUOWbp_Ft9Y3-9T4Me-3zrkbEwj1D07khl2WBV1fSkMAYjG8zyNkJBacxGfiieFIb3hlUMWdM6lQqSNy85TEiqnM9vPti7EHJ9KU4pwGqvy92aj7Zpo9RcSkPRnGQgpjCihScI_LGpVgBg4yLmxLLxvyRQZGbyPlV70lDMsIxVx_u_RUA6hFzlr7KIo54mNOis-tu7bqX39utdoSbd4x3snaL8dOQ&amp;__tn__=%2ANK-R" data-ft="{&quot;type&quot;:104,&quot;tn&quot;:&quot;*N&quot;}"><span class="_5afx"><span aria-label="hashtag" class="_58cl _5afz">#</span><span class="_58cm">MalaysianAirA450</span></span></a> medium haul aircraft, launching from Malaysia to Adelaide starting 17 December. Find out more: <a href="https://bit.ly/2Nk8tio" target="_blank" data-ft="{&quot;tn&quot;:&quot;-U&quot;}" rel="noopener nofollow" data-lynx-mode="async" data-lynx-uri="https://l.facebook.com/l.php?u=https%3A%2F%2Fbit.ly%2F2Nk8tio&amp;h=AT3u8M2k6JNSNZ5e7pQFU952uYI9GODHJARYeMD5WnQBQpOEghG0zuR25n1iCnx8Js3l-BaKXRAtXjkKx8jWQ8yzx306Fh61nmkF0-mjeVguBM2CGXSlvakhgHRVtZRXrCBPx-cAYjHonXAKzT_z0Y958c1lBD0WqGHrC2VZQd6Rzo1fhocIcmYeRhUdR7fkKBmAnLE4H91KRbwfwOhd6b1RzubpB3calY5c3jzBTZrbDERTbNJGJIWw8rz8IGA3AhF-v6qKYGpzRBl_4C0RLFkl4Cuv6ev1SvnoOkQXZvkJKvCNe6zAwesHd1d_fkHv9vpG5LH38OkehC-i6f4nAjIkWkMv0EdzH4xxnUMfiwdAQRH0Pd9fTQlFujOblKd9jA9toZzZK5RWOkr2-8pVgCcNDxAGxVQ7Jn7dzk4ZDQgYAQrSjGV7mnx2qJehkEFuyoiN2KFoYKRCS2An49ylTw1DGZvi9gKPi1Jz5A">bit.ly/2Nk8tio</a>'*/
-
-
 var c = $.parseHTML(ele[0].innerHTML);
 
 chrome.storage.sync.get("posts", function(response){
