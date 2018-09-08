@@ -11,7 +11,7 @@ body {
 } */
 
 .header {
-    /* font-size: 18px;
+    font-size: 18px;
     font-weight: 900;
     letter-spacing: -1;
     text-align: center;
@@ -19,7 +19,7 @@ body {
     bottom: 0;
     margin-left: auto;
     margin-right: auto;
-    width: 100%; */
+    width: 100%;
     position: relative;
     width: 100%;
 }
@@ -29,6 +29,7 @@ body {
     width: 20%;
     margin-left: auto;
     margin-right: auto;
+    display: block;
 }
 
 .content-container {
