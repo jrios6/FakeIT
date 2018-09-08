@@ -18,14 +18,24 @@
 //         {code: 'document.body.style.backgroundColor = "' + color + '";'});
 //   });
 // };
-$(function(){
-  console.log('what');
+
+function updateTime(prev) {
+  var secondsLeft = 24*60*60 - Math.floor((Date.now()-prev)/1000);
+  const hoursLeft =  Math.floor(secondsLeft / 3600);
+  var minsLeft = Math.floor((secondsLeft - hoursLeft * 3600) / 60)
+  secondsLeft = (secondsLeft - hoursLeft * 3600 - minsLeft * 60)
+  if (minsLeft < 10) minsLeft = '0' + minsLeft;
+  $('#time').text(`${hoursLeft}:${minsLeft}`);
+}
+
+
+function updateScores() {
   chrome.storage.sync.get(['score', 'time', 'points'], function(results){
     $('#score').text(results.score);
-    $('#time').text(results.time);
     $('#points').text(results.points);
+    updateTime(results.time);
 
-    if (results.time === 0) {
+    if (secondsLeft <= 0) {
       var notifOptions = {
         type: 'basic',
         iconUrl: '/img/viking.png',
@@ -35,32 +45,33 @@ $(function(){
       chrome.notifications.create('timesUpNotif', notifOptions);
     };
   });
-});
+}
+
 
 $(document).ready(function () {
-    $('#checkHeadline').click(function(){
-      var submission = $('#headline').val();
-      chrome.storage.sync.get("posts", function(response){
-          if (submission == response.posts[0].siteUrl) {
-            chrome.storage.sync.get(['score', 'points'], function(results){
-              console.log('results', results);
-              var score = results.score + 1;
-              var points = results.points + 50;
-              chrome.storage.sync.set({ score, points });
-            });
-            $('#status').text('Correct! You earned 50 points :)');
-            setTimeout(function() {
-              $('#status').text('');
-            }, 2000);
-          } else {
-            $('#status').text('Wrong! You got x remaining attempts today.');
-            setTimeout(function() {
-              $('#status').text('');
-            }, 2000);
-          }
-      });
+  updateScores();
+  $('#checkHeadline').click(function(){
+    var submission = $('#headline').val();
+    chrome.storage.sync.get("posts", function(response){
+      if (submission == response.posts[0].siteUrl) {
+        chrome.storage.sync.get(['score', 'points'], function(results){
+          var score = results.score + 1;
+          var points = results.points + 50;
+          chrome.storage.sync.set({ score, points });
+          updateScores();
+        });
+        $('#status').text('Correct! You earned 50 points :)');
+        setTimeout(function() {
+          $('#status').text('');
+        }, 2500);
+      } else {
+        $('#status').text('Wrong! You got x remaining attempts today.');
+        setTimeout(function() {
+          $('#status').text('');
+        }, 2500);
+      }
     });
-
+  });
 });
 
 
@@ -120,6 +131,21 @@ function onWindowLoad() {
       message.innerText = 'There was an error injecting script : \n' + chrome.runtime.lastError.message;
     }
     console.log("hello");
+  });
+
+  // Get the input field
+  var input = document.getElementById("headline");
+
+  // Execute a function when the user releases a key on the keyboard
+  input.addEventListener("keyup", function(event) {
+      console.log("entered keyup event listener");
+    // Cancel the default action, if needed
+    event.preventDefault();
+    // Number 13 is the "Enter" key on the keyboard
+    if (event.keyCode === 13) {
+      // Trigger the button element with a click
+      document.getElementById("checkHeadline").click();
+    }
   });
 
 }
