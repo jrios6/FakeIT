@@ -4,6 +4,19 @@
 
 'use strict';
 
+// chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
+//     if (request.method == "getLocalStorage") {
+//       return new Promise((resolve, reject) => {
+//         chrome.storage.sync.get(request.key, function(posts){
+//           sendResponse({data: posts})
+//           resolve("success");
+//         });
+//       );
+//     } else {
+//       sendResponse({});
+//     }
+//
+// });
 
 chrome.runtime.onInstalled.addListener(function() {
   $.ajax({
@@ -12,7 +25,8 @@ chrome.runtime.onInstalled.addListener(function() {
     data: JSON.stringify({ "category": "bs"}),
     contentType: "application/json ; charset=utf-8",
     success: function(result) {
-      chrome.storage.sync.set(result);
+      console.log(result);
+      chrome.storage.sync.set({ posts: [result]});
     },
     dataType: 'json'
   });
