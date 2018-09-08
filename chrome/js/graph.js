@@ -82,7 +82,6 @@ window.onload = function() {
         data: {
             labels: ["Impersonation", "Emotion", "Polarization", "Conspiracy", "Discredit", "Trolling"],
             datasets: [{
-                label: 'Performance by Category',
                 data: [25, 20, 13, 20, 18, 10],
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
@@ -109,6 +108,12 @@ window.onload = function() {
         options: {
             responsive: true,
             maintainAspectRatio: true,
+            legend: {
+            display: false
+            },
+            tooltips: {
+            enabled: true
+        },
 
             scales: {
                 yAxes: [{
