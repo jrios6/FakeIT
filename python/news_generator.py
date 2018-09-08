@@ -23,9 +23,9 @@ def get_article_by_uuid(df, uuid):
     article['uuid'] = uuid
     article['title'] = row.title
     full_text = row.text
-    parts = full_text.split('\n')
-    article['text_lower'] = "\n".join(parts[:3])
-    article['text_upper'] = "\n".join(parts[3:])
+    parts = full_text.split('. ')
+    article['text_lower'] = ". ".join(parts[:5])
+    article['text_upper'] = ". ".join(parts[5:])
     article['published'] = str(np.random.randint(2,10)) + ' hrs'
     article['site_url'] = row.site_url
     article['main_img_url'] = row.main_img_url
