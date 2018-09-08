@@ -9,18 +9,18 @@
     <!-- web-fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,600,700,800" rel="stylesheet">
 
-    <!-- font-awesome -->
-    <link href="css/all.css" rel="stylesheet">
-
     <!-- Style CSS -->
     <link href="css/style.css" rel="stylesheet">
+
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 </head>
 
 <body>
 <div class="col-block">
 <div class="left-col-block">
     <div class="left-header">
-
+        <span> <i class="fas fa-chart-line"></i> FAKE.IT Dashboard </span>
     </div>
     <div class="left-profile">
 
@@ -33,29 +33,112 @@
     </div>
 </div>
 <div class="right-col-block">
+    <!-- weekly progress breakdown -->
     <div class="col-md-12">
         <div class="right-card">
-
+            <div class="right-week-progress">
+                <div class="title">
+                    <i class="fas fa-chart-bar"></i> WEEKLY PROGRESS
+                </div>
+                <canvas id="barChart" width=80% height=30px></canvas>
+            </div>
         </div>
     </div>
+    <!-- knowledge breakdown -->
     <div class="col-md-4">
         <div class="right-card">
-
+            <div class="right-level">
+                <div class="title">
+                    <i class="fas fa-book"></i> KNOWLEDGE
+                </div>
+                <canvas id="pieChart" height=200px></canvas>
+                <br>
+                <p>
+                    <b>CURRENT LEVEL: </b> 2
+                </p>
+            </div>
         </div>
     </div>
+    <!-- leaderboard -->
     <div class="col-md-8">
         <div class="right-card">
-
+            <div class="right-leaderboard">
+                <div class="title">
+                    <i class="fas fa-trophy"></i> LEADERBOARD
+                </div>
+                <div id="leaderboard-container">
+                    <div class="leaderboard-row" style="background-color: #B0B0B0;">
+                        <div class="leaderboard-position"><b>POSITION</b></div><div class="leaderboard-name"><b>USER</b></div><div class="leaderboard-score"><b> CURRENT SCORE</b></div>
+                    </div>
+                    <div class="leaderboard-row">
+                        <div class="leaderboard-position">1.</div><div class="leaderboard-name">$first_pos_name</div><div class="leaderboard-score">$first_pos_score</div>
+                    </div>
+                    <div class="leaderboard-row">
+                        <div class="leaderboard-position">2.</div><div class="leaderboard-name">$second_pos_name</div><div class="leaderboard-score">$second_pos_score</div>
+                    </div>
+                    <div class="leaderboard-row">
+                        <div class="leaderboard-position">3.</div><div class="leaderboard-name">$third_pos_name</div><div class="leaderboard-score">$third_pos_score</div>
+                    </div>
+                    <div class="leaderboard-row" style="background-color: #ECECEC">
+                        <div class="leaderboard-position">#$username_pos</div><div class="leaderboard-name">$username</div><div class="leaderboard-score">$username_score</div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+    <!-- fake news information -->
     <div class="col-md-12">
         <div class="right-card">
-
+            <div class="right-infographic">
+                <img src="img/conspiracy.png" alt="conspiracy">
+                <br>
+                <div class="title">
+                    <b>TYPE: </b>CONSPIRACY
+                </div>
+                <p>Conspiracy theories are part and parcel of fringe
+online news sites. Conspiracies can be defined
+as the belief that unexplained events are
+orchestrated by a covert group or organization.
+In this badge, players are first encouraged
+to come up with an interesting new theory
+and post it on their news site. However, since
+all options are overtly ridiculous (e.g. public
+schools no longer teach cursive writing so that
+people stop reading the Communist Manifesto),
+their theory is seen to be too far removed from
+reality to be believable to their followers. Some
+followers call the player out for their strange
+theory. To save their credibility, players then
+look for a more believable conspiracy to sell to
+their followers. They can either choose between
+Agenda 21, a non-binding United Nations treaty
+on sustainable development, or the so-called
+‘vaccine conspiracy’, or the idea that the World
+Health Organization (WHO) uses vaccinations
+to indoctrinate people. Players score points if
+they cast doubt on the official narrative and ask
+questions that point people in the direction of
+conspiratorial thinking, and lose points for going
+off the rails. Followers react more positively this
+time, and the player is encouraged to write a
+serious news article about their topic of choice.
+If they do well, they gain a cult following, with
+people trusting their news site more and more
+and becoming more sceptical of the so-called
+‘mainstream media’. </p>
+            </div>
         </div>
     </div>
 
+    <!-- for space below -->
+    <div class="col-md-12">
+        <br><br>
+    </div>
 </div>
 </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+<script type="text/javascript" src="js/graph.js"></script>
 </body>
 
 </html>
