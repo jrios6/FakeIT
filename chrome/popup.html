@@ -1,16 +1,40 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <link rel="stylesheet" type="text/css" href="css/popupstyle.css" />
-  </head>
-  <body>
-    <div class="header" id="greet">fake.IT</div>
-    <input type="text" id="amount" />
-    <input type="submit" id="spendAmount" value="Spend" />
-    <div id='message'>Injecting Script....</div>
+</head>
+<body>
+  <div class="header-container">
+      <div class="header" id="greet">fake.IT</div>
+  </div>
 
-    <button id="changeColor"></button>
-    <script src="popup.js"></script>
-    <script src="jquery.js"></script>
-  </body>
+    <div class="content-container">
+    <table style="width:100%">
+        <tr>
+            <th align="left">Score: </th>
+            <td>0/3</td>
+        </tr>
+        <tr>
+            <th align="left">Time Left: </th>
+            <td>00:35</td>
+        </tr>
+        <tr>
+            <th align="left">Total Points: </th>
+            <td>550</td>
+        </tr>
+    </table>
+    </div>
+    <div class="enter-title">
+        Enter the article headline:
+    </div>
+    <input type="text" id="headline" />
+    <input type="submit" id="checkHeadline" value="Submit" />
+    <br>
+    <div class="open-dashboard">
+        <a href="/options.html" target="_blank">VIEW DASHBOARD</a>
+    </div>
+
+<script src="popup.js"></script>
+<script src="jquery.js"></script>
+</body>
 </html>
