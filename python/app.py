@@ -2,9 +2,11 @@ from flask import Flask, jsonify, request #import objects from the Flask model
 from flask_restful import Resource, Api
 from flask_cors import CORS
 
-import news_generator as news
 import numpy as np
 import emailTest as et
+import news_generator as news
+import headline_generator as headline_gen
+
 
 app = Flask(__name__) #define app using Flask
 CORS(app)
@@ -45,13 +47,24 @@ class GetRandomArticle(Resource):
                 'news_icon_str': news_icon_str}
         return data
 
+
 class SendEmail(Resource):
     def get(self):
         et.send_email()
 
+
+class GetRandomHeadline(Resource):
+    def get(self):
+        filename = 'data/headlines.csv'
+        headline, label = headline_gen.get_random_headline(filename)
+        return {'headline': headline, 'label': label}
+
+
 api.add_resource(Test, '/')
 api.add_resource(GetRandomArticle, '/article')
 api.add_resource(SendEmail, '/sendemail')
+api.add_resource(GetRandomHeadline, '/headline')
+
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000) #run app on port 5000 in debug mode
