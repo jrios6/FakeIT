@@ -17,10 +17,10 @@ class GetRandomArticle(Resource):
     def put(self):
         # Get requested category or None
         if request.json == None:
-            category = None:
+            category = None
         else:
             category = request.json['category']
-            
+
         article = news.get_random_article(category)
         data = {'title': article['title'],
                 'text': article['text'],
