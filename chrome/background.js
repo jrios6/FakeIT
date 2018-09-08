@@ -6,11 +6,13 @@ chrome.runtime.onInstalled.addListener(function() {
     var time = 0;
     var points = 0;
     var level = 0;
+    var questionScore = 0;
     if (results.score) score += results.score;
     if (results.time) time += results.time;
     if (results.points) points += results.points;
     if (results.level) level += results.level;
-    chrome.storage.sync.set({ score, time, points, level });
+    if (results.questionScore) questionScore += results.questionScore;
+    chrome.storage.sync.set({ score, time, points, level, questionScore });
   });
 
   $.ajax({
