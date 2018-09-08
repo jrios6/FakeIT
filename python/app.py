@@ -4,6 +4,7 @@ from flask_cors import CORS
 
 import news_generator as news
 import numpy as np
+import emailTest as et
 
 app = Flask(__name__) #define app using Flask
 CORS(app)
@@ -31,7 +32,7 @@ class GetRandomArticle(Resource):
         news_icon_number = np.random.randint(1, 7)
         news_icon_str = 'python/data/news_icon/' + str(news_icon_number) + '.jpg'
 
-        data = {'title': article['title'], 
+        data = {'title': article['title'],
                 'text_lower': article['text_lower'],
                 'text_upper': article['text_upper'],
                 'imageURL': article['main_img_url'],
@@ -44,8 +45,13 @@ class GetRandomArticle(Resource):
                 'news_icon_str': news_icon_str}
         return data
 
+class SendEmail():
+    def get(self):
+        et.send_email()
+
 api.add_resource(Test, '/')
 api.add_resource(GetRandomArticle, '/article')
+api.add_resource(SendEmail, '/sendemail')
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000) #run app on port 5000 in debug mode
