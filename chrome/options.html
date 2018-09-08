@@ -118,7 +118,7 @@
     </div>
 
     <!-- fake news information -->
-    <div class="col-md-12">
+    <div class="col-md-7">
         <div class="right-card">
             <div class="right-infographic">
                 <img src="img/conspiracy.png" alt="conspiracy">
@@ -161,6 +161,33 @@ and becoming more sceptical of the so-called
         </div>
     </div>
 
+    <!-- categories -->
+    <div class="col-md-5">
+        <div class="right-card">
+            <div class="right-categories">
+                <div class="title">
+                    <i class="fas fa-table"></i> CATEGORIES
+                </div>
+                <canvas id="categoriesChart" width=80% height=100px></canvas>
+            </div>
+        </div>
+        <div class="right-card">
+            <div class="right-game">
+                <div class="title">
+                    <i class="fas fa-gamepad"></i> FAKE HEADLINES
+                </div>
+                <p>Insert fake news headline here hahahahah</p>
+                <div class="col-md-6">
+                    <button id="realButton" style="background-color:green">REAL</button>
+                </div>
+                <div class="col-md-6">
+                    <button id="fakeButton" style="background-color:red">FAKE NEWS</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
     <!-- for space below -->
     <div class="col-md-12">
         <br><br>
@@ -170,6 +197,7 @@ and becoming more sceptical of the so-called
 
 <script type="text/javascript" src="js/chart.js"></script>
 <script type="text/javascript" src="js/graph.js"></script>
+<script type="text/javascript" src="js/buttonHandler.js"></script>
 </body>
 
 </html>
