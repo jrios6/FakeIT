@@ -41,3 +41,13 @@ def get_random_article(category=None):
     else: 
         chosen_category = category
     return random_article_by_category(df, chosen_category)
+
+def get_random_article_by_difficulty(df, difficulty_label):
+    article = {}
+    if difficulty_label == 'hard':
+        new_df = df.loc[df['difficulty'] > 0.9]
+    elif difficulty_label == 'easy':
+        new_df = df.loc[df['difficulty'] < 0.1]
+    chosen_id = np.random.choice(new_df.index)
+    article = get_article_by_uuid(new_df, chosen_id)
+    return article
