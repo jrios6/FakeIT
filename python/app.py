@@ -1,9 +1,11 @@
 from flask import Flask, jsonify, request #import objects from the Flask model
 from flask_restful import Resource, Api
+from flask_cors import CORS
 
 import news_generator as news
 
 app = Flask(__name__) #define app using Flask
+CORS(app)
 api = Api(app)
 
 class Test(Resource):
@@ -16,12 +18,12 @@ class GetRandomArticle(Resource):
         # Get requested category or None
         category = request.json['category']
         article = news.get_random_article(category)
-        data = {'title': article['title'], 
+        data = {'title': article['title'],
                 'text': article['text'],
                 'imageURL': article['main_img_url'],
                 'date': article['published'],
                 'siteUrl': article['site_url'],
-                'category': article['category']} 
+                'category': article['category']}
         return data
 
 api.add_resource(Test, '/')
