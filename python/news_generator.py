@@ -21,8 +21,12 @@ def get_article_by_uuid(df, uuid):
     row = df.loc[uuid]
     article = {}
     article['title'] = row.title
-    article['text'] = row.text
-    article['published'] = row.published
+    full_text = row.text
+    parts = full_text.split(' ')
+    article['text_lower'] = " ".join(parts[:50])
+    article['text_upper'] = " ".join(parts[50:])
+    article['text_upper'] = " " + article['text_upper']
+    article['published'] = str(np.random.randint(2,10)) + ' hrs'
     article['site_url'] = row.site_url
     article['main_img_url'] = row.main_img_url
     article['category'] = row.type
@@ -32,8 +36,9 @@ def get_article_by_uuid(df, uuid):
 def get_random_article(category=None):
     df = get_news_df('data/filtered_fake.csv')
     if category == None:
-        valid_categories = ['conspiracy', 'satire', 'hate', 'state']
-        chosen_category = np.random.choice(valid_categories)
+        #valid_categories = ['conspiracy', 'satire', 'hate', 'state']
+        #chosen_category = np.random.choice(valid_categories)
+        chosen_category = 'bs'
     else: 
         chosen_category = category
     return random_article_by_category(df, chosen_category)
