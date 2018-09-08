@@ -82,7 +82,7 @@ window.onload = function() {
         data: {
             labels: ["Impersonation", "Emotion", "Polarization", "Conspiracy", "Discredit", "Trolling"],
             datasets: [{
-                data: [25, 20, 13, 20, 18, 10],
+                data: [25, 20, 15, 20, 18, 23],
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
                     'rgba(54, 162, 235, 0.2)',

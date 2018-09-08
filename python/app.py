@@ -29,7 +29,7 @@ class GetRandomArticle(Resource):
         num_comments = np.random.randint(2,100)
         num_likes = np.random.randint(num_comments, 250)
         num_shares = np.random.randint(1,int(num_likes/2))
-        news_icon_number = np.random.randint(1, 7)
+        news_icon_number = article['icon_number']
         news_icon_str = 'python/data/news_icon/' + str(news_icon_number) + '.jpg'
 
         data = {'title': article['title'],
