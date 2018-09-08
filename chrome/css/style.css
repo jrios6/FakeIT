@@ -127,7 +127,7 @@ iframe {
     width: 100%;
     /* height: auto; */
     border-radius: 10px;
-    padding: 40px;
+    padding: 30px;
     overflow: hidden;
     display: block;
     margin-top: 10px;
@@ -143,13 +143,46 @@ iframe {
     width: 100%;
 }
 
+.right-week-progress:before {
+    content: "";
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 0px;
+    height: 0px;
+    border-bottom: 50px solid transparent;
+    border-left: 50px solid #EEF352;
+}
+
 .right-month-progress {
     height: 250px;
     width: 100%;
 }
 
+.right-month-progress:before {
+    content: "";
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 0px;
+    height: 0px;
+    border-bottom: 50px solid transparent;
+    border-left: 50px solid #F37652;
+}
+
 .right-level {
     height: 250px;
+}
+
+.right-level:before {
+    content: "";
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 0px;
+    height: 0px;
+    border-bottom: 50px solid transparent;
+    border-left: 50px solid #93FFA0;
 }
 
 .right-level p {
@@ -167,6 +200,17 @@ iframe {
 
 .right-leaderboard {
     height: 250px;
+}
+
+.right-leaderboard:before {
+    content: "";
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 0px;
+    height: 0px;
+    border-bottom: 50px solid transparent;
+    border-left: 50px solid #93E5FF;
 }
 
 .leaderboard-header {
@@ -221,6 +265,28 @@ iframe {
 
 }
 
+.right-categories:before {
+    content: "";
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 0px;
+    height: 0px;
+    border-bottom: 50px solid transparent;
+    border-left: 50px solid #C693FF;
+}
+
+.right-game:before {
+    content: "";
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 0px;
+    height: 0px;
+    border-bottom: 50px solid transparent;
+    border-left: 50px solid #FF93B8;
+}
+
 .right-game p {
     font-size: 14px;
     font-weight: 600;
@@ -241,6 +307,17 @@ iframe {
 
 .right-infographic {
     height: auto;
+}
+
+.right-infographic:before {
+    content: "";
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 0px;
+    height: 0px;
+    border-bottom: 50px solid transparent;
+    border-left: 50px solid #DDFF93;
 }
 
 .right-infographic img {
