@@ -19,13 +19,22 @@
 // });
 
 chrome.runtime.onInstalled.addListener(function() {
+  chrome.storage.sync.get(['score', 'time', 'points'], function(results){
+    var score = 0;
+    var time = 0;
+    var points = 0;
+    if (results.score) score += results.score;
+    if (results.time) time += results.time;
+    if (results.points) points += results.points;
+    chrome.storage.sync.set({ score, time, points });
+  });
+
   $.ajax({
     type: "PUT",
     url: 'http://localhost:5000/article',
     data: JSON.stringify({ "category": "bs"}),
     contentType: "application/json ; charset=utf-8",
     success: function(result) {
-      console.log(result);
       chrome.storage.sync.set({ posts: [result]});
     },
     dataType: 'json'
