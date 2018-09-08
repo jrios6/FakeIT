@@ -4,7 +4,7 @@
   "description": "Build an Extension!",
   "permissions": ["activeTab", "notifications", "declarativeContent", "storage", "<all_urls>"],
   "background": {
-      "scripts": ["background.js"],
+      "scripts": ["jquery.js", "background.js"],
       "persistent": false
     },
   "page_action": {

@@ -4,7 +4,19 @@
 
 'use strict';
 
+
 chrome.runtime.onInstalled.addListener(function() {
+  $.ajax({
+    type: "PUT",
+    url: 'http://localhost:5000/article',
+    data: JSON.stringify({ "category": "bs"}),
+    contentType: "application/json ; charset=utf-8",
+    success: function(result) {
+      chrome.storage.sync.set(result);
+    },
+    dataType: 'json'
+  });
+
   chrome.declarativeContent.onPageChanged.removeRules(undefined, function() {
     chrome.declarativeContent.onPageChanged.addRules([{
       conditions: [new chrome.declarativeContent.PageStateMatcher({

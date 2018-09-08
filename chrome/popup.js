@@ -62,18 +62,8 @@ chrome.runtime.onMessage.addListener(function(request, sender) {
   }
 });
 
-document.addEventListener("DOMContentLoaded", function(){
-  chrome.tabs.executeScript(null, { file: "jquery-3.3.1.min.js" }, function() {
-      chrome.tabs.executeScript(null, { file: "content.js" });
-  });
-
-}, false);
-
 
 function onWindowLoad() {
-
-
-
   var message = document.querySelector('#message');
 
 
