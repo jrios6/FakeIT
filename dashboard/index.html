@@ -32,9 +32,16 @@
             </div>
         </div>
     </div>
-    <div class="left-newsfeed">
-        <iframe width="400" height="400" style="border:none;" src="http://output17.rssinclude.com/output?type=iframe&amp;id=1191666&amp;hash=b6f397e52df4f303b153f81f62fa4953"></iframe>
+
+    <!-- rss newsfeed -->
+    <div class="col-md-12">
+        <div class="left-newsfeed">
+            <div class="left-newsfeed-border">
+                <iframe width="400" height="400" scrolling="no" style="border:none;display:block;" src="http://output49.rssinclude.com/output?type=iframe&amp;id=1191666&amp;hash=b6f397e52df4f303b153f81f62fa4953"></iframe>
+            </div>
+        </div>
     </div>
+
 </div>
 <div class="right-col-block">
     <!-- weekly progress breakdown -->
@@ -44,10 +51,11 @@
                 <div class="title">
                     <i class="fas fa-chart-bar"></i> WEEKLY PROGRESS
                 </div>
-                <canvas id="barChart" width=80% height=30px></canvas>
+                <canvas id="weekChart" width=80% height=20px></canvas>
             </div>
         </div>
     </div>
+
     <!-- knowledge breakdown -->
     <div class="col-md-4">
         <div class="right-card">
@@ -90,6 +98,19 @@
             </div>
         </div>
     </div>
+
+    <!-- monthly progress breakdown -->
+    <div class="col-md-12">
+        <div class="right-card">
+            <div class="right-month-progress">
+                <div class="title">
+                    <i class="fas fa-chart-bar"></i> MONTHLY PROGRESS
+                </div>
+                <canvas id="monthChart" width=80% height=20px></canvas>
+            </div>
+        </div>
+    </div>
+
     <!-- fake news information -->
     <div class="col-md-12">
         <div class="right-card">
