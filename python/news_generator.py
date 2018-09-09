@@ -31,6 +31,7 @@ def get_article_by_uuid(df, uuid):
     article['main_img_url'] = row.main_img_url
     article['category'] = row.type
     article['icon_number'] = row.icon_num
+    article['author'] = row.author
 
     return article
 

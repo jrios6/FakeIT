@@ -44,7 +44,8 @@ class GetRandomArticle(Resource):
                 'num_comments': num_comments,
                 'num_likes': num_likes,
                 'num_shares': num_shares,
-                'news_icon_str': news_icon_str}
+                'news_icon_str': news_icon_str,
+                'author': article['author']}
         return data
 
 
