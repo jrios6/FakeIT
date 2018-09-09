@@ -36,7 +36,7 @@ def get_article_by_uuid(df, uuid):
     return article
 
 def get_random_article(category=None):
-    df = get_news_df('data/gold_dataset.csv')
+    df = get_news_df('data/gold_dataset_dup.csv')
     if category == None:
         valid_categories = ['conspiracy', 'satire', 'hate', 'state']
         chosen_category = np.random.choice(valid_categories)
