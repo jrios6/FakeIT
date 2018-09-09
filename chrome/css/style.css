@@ -305,6 +305,10 @@ iframe {
     border-radius: 10px;
 }
 
+#score {
+  font-size: 15px;
+}
+
 .right-infographic {
     height: auto;
 }
