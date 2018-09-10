@@ -1,8 +1,8 @@
 import emailHandler as eh
 
 def send_email():
-    login_email = 'gamefakeit6@gmail.com'
-    login_password = 'facebookrejects'
+    login_email = ''
+    login_password = ''
     mailserver = eh.login(login_email, login_password)
     recepient_email = 'contactjrios@gmail.com'
     # recepient_email = 'yang025@e.ntu.edu.sg'
